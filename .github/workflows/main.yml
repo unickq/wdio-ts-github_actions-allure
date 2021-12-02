@@ -34,26 +34,28 @@ jobs:
       - name : Run tests
         run : npm test
 
-      - name: JUnit report
-        uses: mikepenz/action-junit-report@v2
+      - name: Test report
+        uses: dorny/test-reporter@v1
         if: always()
         continue-on-error: true
         with:
-          report_path: '**/results/junit/*.xml'
+          name: test-results
+          reporter: jest-junit 
+          path: '**/junit/*.xml'
           
-      - name: Allure history
-        uses: actions/checkout@v2
-        if: always()
-        continue-on-error: true
-        with:
-          ref: gh-pages
-          path: gh-pages
+      # - name: Allure history
+      #   uses: actions/checkout@v2
+      #   if: always()
+      #   continue-on-error: true
+      #   with:
+      #     ref: gh-pages
+      #     path: gh-pages
 
-      - name: Allure report
-        uses: simple-elf/allure-report-action@master
-        if: always()
-        id: allure-report
-        with:
-          allure_results: allure-results
-          allure_history: allure-history
-          keep_reports: 10
+      # - name: Allure report
+      #   uses: simple-elf/allure-report-action@master
+      #   if: always()
+      #   id: allure-report
+      #   with:
+      #     allure_results: allure-results
+      #     allure_history: allure-history
+      #     keep_reports: 10
