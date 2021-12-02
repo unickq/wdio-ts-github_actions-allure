@@ -34,6 +34,13 @@ jobs:
       - name : Run tests
         run : npm test
 
+      - name: JUnit report
+        uses: mikepenz/action-junit-report@v2
+        if: always()
+        continue-on-error: true
+        with:
+          report_path: '**/results/junit/*.xml'
+          
       - name: Allure history
         uses: actions/checkout@v2
         if: always()
