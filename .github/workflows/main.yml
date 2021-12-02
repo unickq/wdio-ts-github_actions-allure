@@ -35,13 +35,11 @@ jobs:
         run : npm test
 
       - name: Test report
-        uses: dorny/test-reporter@v1
+        uses: mikepenz/action-junit-report@v2
         if: always()
         continue-on-error: true
         with:
-          name: test-results
-          reporter: mocha-json 
-          path: 'results/json/**.json'
+          report_paths: 'results/junit/**.xml'
           
       # - name: Allure history
       #   uses: actions/checkout@v2
