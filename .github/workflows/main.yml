@@ -41,7 +41,7 @@ jobs:
         with:
           name: test-results
           reporter: jest-junit 
-          path: '**/junit/*.xml'
+          path: 'results/junit/**.xml'
           
       # - name: Allure history
       #   uses: actions/checkout@v2
