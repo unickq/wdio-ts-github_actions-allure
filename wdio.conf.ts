@@ -48,8 +48,23 @@ export const config: WebdriverIO.Config = {
 
   reporters: [
     "spec",
-    ["junit", { outputDir: "results/junit" }],
-    ["allure", { outputDir: "results/allure-results", disableWebdriverScreenshotsReporting: false }],
+    [
+      "junit",
+      {
+        outputDir: "results/junit",
+        outputFileFormat: function (options: any) {
+          return `wdio-${options.cid}.xml`;
+        },
+        addFileAttribute: true,
+      },
+    ],
+    [
+      "allure",
+      {
+        outputDir: "results/allure-results",
+        disableWebdriverScreenshotsReporting: false,
+      },
+    ],
   ],
 
   mochaOpts: {
@@ -61,10 +76,9 @@ export const config: WebdriverIO.Config = {
     fs.rmdirSync("results", { recursive: true });
   },
 
-
-  afterTest(test: any, context: any, result: any){
+  afterTest(test: any, context: any, result: any) {
     if (!result.passed) {
       browser.takeScreenshot();
     }
-  }
+  },
 };
