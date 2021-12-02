@@ -40,8 +40,8 @@ jobs:
         continue-on-error: true
         with:
           name: test-results
-          reporter: jest-junit 
-          path: 'results/junit/**.xml'
+          reporter: mocha-json 
+          path: 'results/json/**.json'
           
       # - name: Allure history
       #   uses: actions/checkout@v2

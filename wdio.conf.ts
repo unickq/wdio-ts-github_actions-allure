@@ -52,9 +52,7 @@ export const config: WebdriverIO.Config = {
       "junit",
       {
         outputDir: "results/junit",
-        outputFileFormat: function (options: any) {
-          return `wdio-${options.cid}.xml`;
-        },
+        outputFileFormat: (options: any) => `wdio-${options.cid}.xml`,
         addFileAttribute: true,
       },
     ],
@@ -63,6 +61,13 @@ export const config: WebdriverIO.Config = {
       {
         outputDir: "results/allure-results",
         disableWebdriverScreenshotsReporting: false,
+      },
+    ], 
+    [
+      "json",
+      {
+        outputDir: "results/json",
+        outputFileFormat: (opts: any) => `results-${opts.cid}.json`,
       },
     ],
   ],
