@@ -33,16 +33,13 @@ jobs:
 
       - name : Run tests
         run : npm test
-
-      - name : cat
-        run : cat results/json/results-0-0.json
       
       - name : Test Reports
         uses: dorny/test-reporter@v1
         with:
           name: WDIO Tests
-          path: results/json/results-0-0.json
-          reporter: mocha-json
+          path: results/junit/**.xml
+          reporter: jest-junit
 
       # - name: Test report
       #   uses: mikepenz/action-junit-report@v2
