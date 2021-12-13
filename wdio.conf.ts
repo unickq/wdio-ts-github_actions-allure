@@ -62,7 +62,7 @@ export const config: WebdriverIO.Config = {
         outputDir: "results/allure-results",
         disableWebdriverScreenshotsReporting: false,
       },
-    ], 
+    ],
     [
       "json",
       {
@@ -74,11 +74,13 @@ export const config: WebdriverIO.Config = {
 
   mochaOpts: {
     ui: "bdd",
-    timeout: 60000,
+    timeout: 60_000,
   },
 
   onPrepare() {
-    fs.rmdirSync("results", { recursive: true });
+    if (fs.existsSync("results")) {
+      fs.rmdirSync("results", { recursive: true });
+    }
   },
 
   afterTest(test: any, context: any, result: any) {
