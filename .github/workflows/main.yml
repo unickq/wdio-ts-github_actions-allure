@@ -2,7 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ debug ]
+    branches:
+      - main
+      - "feature/**"
   workflow_dispatch:
 
 jobs:
