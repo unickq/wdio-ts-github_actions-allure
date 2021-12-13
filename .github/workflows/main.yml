@@ -39,7 +39,7 @@ jobs:
         with:
           name: WDIO Tests
           path: results/junit/**.xml
-          reporter: jest-junit
+          reporter: java-junit
 
       # - name: Test report
       #   uses: mikepenz/action-junit-report@v2
