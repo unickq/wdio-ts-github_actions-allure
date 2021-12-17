@@ -40,7 +40,7 @@ jobs:
         uses: dorny/test-reporter@v1
         with:
           name: WDIO Tests
-          path: results/junit/**.xml
+          path: junit-report/**.xml
           reporter: java-junit
           
       - name: Allure history
