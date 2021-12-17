@@ -40,29 +40,41 @@ jobs:
         uses: dorny/test-reporter@v1
         with:
           name: WDIO Tests
-          path: results/junit/**.xml
+          path: junit-report/**.xml
           reporter: java-junit
-
-      # - name: Test report
-      #   uses: mikepenz/action-junit-report@v2
-      #   if: always()
-      #   continue-on-error: true
-      #   with:
-      #     report_paths: 'results/junit/**.xml'
           
-      # - name: Allure history
-      #   uses: actions/checkout@v2
-      #   if: always()
-      #   continue-on-error: true
-      #   with:
-      #     ref: gh-pages
-      #     path: gh-pages
+      - name: Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
 
-      # - name: Allure report
-      #   uses: simple-elf/allure-report-action@master
+      - name: Allure report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        id: allure-report
+        with:
+          allure_results: allure-results
+          allure_report: allure-report
+          allure_history: allure-history
+          keep_reports: 10
+
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
+
+      # - name: Post the link to the report
       #   if: always()
-      #   id: allure-report
-      #   with:
-      #     allure_results: allure-results
-      #     allure_history: allure-history
-      #     keep_reports: 10
+      #   uses: Sibz/github-status-action@v1
+      #   with: 
+      #       authToken: ${{secrets.GITHUB_TOKEN}}
+      #       context: 'Test report'
+      #       state: 'success'
+      #       sha: ${{ github.event.pull_request.head.sha }}
+      #       target_url: unickq.github.io/wdio-ts-github_actions-allure/${{ github.run_number }}

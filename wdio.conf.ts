@@ -51,7 +51,7 @@ export const config: WebdriverIO.Config = {
     [
       "junit",
       {
-        outputDir: "results/junit",
+        outputDir: "junit-report",
         outputFileFormat: (options: any) => `wdio-${options.cid}.xml`,
         addFileAttribute: true,
       },
@@ -59,15 +59,8 @@ export const config: WebdriverIO.Config = {
     [
       "allure",
       {
-        outputDir: "results/allure-results",
+        outputDir: "allure-results",
         disableWebdriverScreenshotsReporting: false,
-      },
-    ],
-    [
-      "json",
-      {
-        outputDir: "results/json",
-        outputFileFormat: (opts: any) => `results-${opts.cid}.json`,
       },
     ],
   ],
@@ -78,14 +71,16 @@ export const config: WebdriverIO.Config = {
   },
 
   onPrepare() {
-    if (fs.existsSync("results")) {
-      fs.rmdirSync("results", { recursive: true });
-    }
+    ["allure-results", "allure-report", "junit-report"].forEach((dir) => {
+      if (fs.existsSync(dir)) {
+        fs.rmdirSync(dir, { recursive: true });
+      }
+    });
   },
 
-  afterTest(test: any, context: any, result: any) {
+  async afterTest(test: any, context: any, result: any) {
     if (!result.passed) {
-      browser.takeScreenshot();
+      await browser.takeScreenshot();
     }
   },
 };

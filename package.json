@@ -5,7 +5,7 @@
   "scripts": {
     "test-spec": "npx wdio wdio.conf.ts --spec",
     "test": "npx wdio wdio.conf.ts",
-    "allure": "allure generate -c results/allure-results -o results/allure-report && allure open results/allure-report"
+    "allure": "allure generate -c allure-results -o allure-report && allure open allure-report"
   },
   "repository": {
     "type": "git",
@@ -19,17 +19,16 @@
   },
   "homepage": "https://github.com/unickq/webdriverio-typescript-github_actions#readme",
   "dependencies": {
-    "@wdio/cli": "^7.16.11"
+    "@wdio/cli": "^7.16.12"
   },
   "devDependencies": {
     "@types/node": "16.11.12",
     "@wdio/allure-reporter": "^7.16.11",
-    "@wdio/junit-reporter": "^7.16.11",
-    "@wdio/local-runner": "^7.16.11",
+    "@wdio/junit-reporter": "^7.16.12",
+    "@wdio/local-runner": "^7.16.12",
     "@wdio/mocha-framework": "^7.16.11",
     "@wdio/spec-reporter": "^7.16.11",
     "ts-node": "^10.4.0",
-    "typescript": "^4.5.3",
-    "wdio-json-reporter": "^3.0.0"
+    "typescript": "^4.5.4"
   }
 }

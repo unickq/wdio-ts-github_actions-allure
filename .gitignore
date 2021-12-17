@@ -1,2 +1,4 @@
 node_modules
-results
+junit-report
+allure-results
+allure-report
