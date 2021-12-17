@@ -1,0 +1,79 @@
+{
+  "uid" : "aad1cac72cd63adf",
+  "name" : "fails",
+  "fullName" : "My Login application.fails",
+  "historyId" : "cb89167b8c9521839b6e9a3c6cad983e",
+  "time" : {
+    "start" : 1639741032530,
+    "stop" : 1639741032530,
+    "duration" : 0
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "skipped",
+  "statusMessage" : "Test ignored",
+  "statusTrace" : "undefined",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "My Login application"
+  }, {
+    "name" : "testClass",
+    "value" : "My Login application"
+  }, {
+    "name" : "testMethod",
+    "value" : "fails"
+  }, {
+    "name" : "package",
+    "value" : "My Login application"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 3,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "a169dbd5c2756b2c",
+        "reportUrl" : "https://unickq.github.io/wdio-ts-github_actions-allure/23//#testresult/a169dbd5c2756b2c",
+        "status" : "skipped",
+        "statusDetails" : "Test ignored",
+        "time" : {
+          "start" : 1639740513032,
+          "stop" : 1639740513032,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "a5b80843898de54",
+        "reportUrl" : "https://unickq.github.io/wdio-ts-github_actions-allure/22//#testresult/a5b80843898de54",
+        "status" : "skipped",
+        "statusDetails" : "Test ignored",
+        "time" : {
+          "start" : 1639740195910,
+          "stop" : 1639740195910,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "aad1cac72cd63adf.json",
+  "parameterValues" : [ ]
+}
