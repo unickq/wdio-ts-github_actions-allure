@@ -1,0 +1,43 @@
+{
+  "cb23434e674ddd6cf377eb376b53226" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "fa5628d8faf2e49e",
+      "reportUrl" : "https://unickq.github.io/wdio-ts-github_actions-allure/22//#testresult/fa5628d8faf2e49e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1639740194867,
+        "stop" : 1639740195909,
+        "duration" : 1042
+      }
+    } ]
+  },
+  "cb89167b8c9521839b6e9a3c6cad983e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a5b80843898de54",
+      "reportUrl" : "https://unickq.github.io/wdio-ts-github_actions-allure/22//#testresult/a5b80843898de54",
+      "status" : "skipped",
+      "statusDetails" : "Test ignored",
+      "time" : {
+        "start" : 1639740195910,
+        "stop" : 1639740195910,
+        "duration" : 0
+      }
+    } ]
+  }
+}

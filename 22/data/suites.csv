@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"skipped","Fri Dec 17 11:23:15 GMT 2021","Fri Dec 17 11:23:15 GMT 2021","0","","My Login application","","My Login application","fails","fails",""
+"passed","Fri Dec 17 11:23:14 GMT 2021","Fri Dec 17 11:23:15 GMT 2021","1042","","My Login application","","My Login application","should login with valid credentials","should login with valid credentials",""
