@@ -5,7 +5,7 @@
   "scripts": {
     "test-spec": "npx wdio wdio.conf.ts --spec",
     "test": "npx wdio wdio.conf.ts",
-    "allure": "allure generate -c results/allure-results -o results/allure-report && allure open results/allure-report"
+    "allure": "allure generate -c allure-results -o allure-report && allure open allure-report"
   },
   "repository": {
     "type": "git",
