@@ -1,0 +1,10 @@
+[ {
+  "name" : "GitHub Actions",
+  "type" : "github",
+  "url" : "https://unickq.github.io/wdio-ts-github_actions-allure",
+  "buildOrder" : 23,
+  "buildName" : "GitHub Actions Run #1591987454",
+  "buildUrl" : "https://github.com/unickq/wdio-ts-github_actions-allure/actions/runs/1591987454",
+  "reportName" : "Allure Report with history",
+  "reportUrl" : "https://unickq.github.io/wdio-ts-github_actions-allure/23/"
+} ]
