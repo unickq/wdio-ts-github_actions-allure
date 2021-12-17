@@ -42,27 +42,29 @@ jobs:
           name: WDIO Tests
           path: results/junit/**.xml
           reporter: java-junit
-
-      # - name: Test report
-      #   uses: mikepenz/action-junit-report@v2
-      #   if: always()
-      #   continue-on-error: true
-      #   with:
-      #     report_paths: 'results/junit/**.xml'
           
-      # - name: Allure history
-      #   uses: actions/checkout@v2
-      #   if: always()
-      #   continue-on-error: true
-      #   with:
-      #     ref: gh-pages
-      #     path: gh-pages
+      - name: Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
 
-      # - name: Allure report
-      #   uses: simple-elf/allure-report-action@master
-      #   if: always()
-      #   id: allure-report
-      #   with:
-      #     allure_results: allure-results
-      #     allure_history: allure-history
-      #     keep_reports: 10
+      - name: Allure report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        id: allure-report
+        with:
+          allure_results: results/allure-results
+          allure_report: allure-report
+          allure_history: allure-history
+          keep_reports: 10
+
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history

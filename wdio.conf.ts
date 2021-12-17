@@ -63,13 +63,6 @@ export const config: WebdriverIO.Config = {
         disableWebdriverScreenshotsReporting: false,
       },
     ],
-    [
-      "json",
-      {
-        outputDir: "results/json",
-        outputFileFormat: (opts: any) => `results-${opts.cid}.json`,
-      },
-    ],
   ],
 
   mochaOpts: {
